@@ -24,6 +24,7 @@ AWS Glue Crawlers: Populate the Data Catalog by crawling structured or unstructu
 
 AWS Glue Jobs: Defined ETL jobs that use Data Catalog tables as both source and target. The script connects with source data to process and writes to the S3 bucket.
 
+
 Serverless Workflow
 
 S3 Event Notification: Triggered on a PUT event in the landing zone.
@@ -31,6 +32,7 @@ S3 Event Notification: Triggered on a PUT event in the landing zone.
 AWS Lambda Function: Receives the S3 event notification and initiates the AWS Glue workflow.
 
 AWS Glue Workflow: Orchestrates multiple crawlers, jobs, and triggers to process the data.
+
 
 Data Processing and Storage
 
