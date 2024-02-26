@@ -4,8 +4,11 @@ In this project, we've implemented an automated data consolidation process for t
 Technologies Used
 
 AWS Lambda: Serverless computing for event-driven data processing.
+
 Amazon S3: Scalable object storage for landing and staging data.
+
 AWS Glue: Fully managed ETL service for data categorization, cleaning, and enrichment.
+
 Amazon Redshift: Fully managed, scalable cloud data warehouse for fast analytics.
 
 Architecture
@@ -16,19 +19,25 @@ Architecture
 Data Ingestion
 
 AWS Glue Data Catalog: Used to catalog data from multiple sources, providing tables for ETL jobs.
+
 AWS Glue Crawlers: Populate the Data Catalog by crawling structured or unstructured data in the S3 landing zone.
+
 AWS Glue Jobs: Defined ETL jobs that use Data Catalog tables as both source and target. The script connects with source data to process and writes to the S3 bucket.
 
 Serverless Workflow
 
 S3 Event Notification: Triggered on a PUT event in the landing zone.
+
 AWS Lambda Function: Receives the S3 event notification and initiates the AWS Glue workflow.
+
 AWS Glue Workflow: Orchestrates multiple crawlers, jobs, and triggers to process the data.
 
 Data Processing and Storage
 
 Amazon Redshift: ETL jobs issue COPY statements against Redshift for efficient data transfer.
+
 S3 Staging Bucket: Receives data from AWS Glue jobs before loading it into Redshift.
+
 Data API and Query Editor: Users can query the Redshift data warehouse using SQL or the built-in query editor for real-time insights.
 
 Implementation Steps
